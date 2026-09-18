@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import {cn} from "@/lib/utils";
 
 const navItems = [
@@ -14,7 +14,7 @@ const navItems = [
 
 const Navbar = () => {
     const pathName = usePathname();
-    const { user } = useUser();
+    const { isLoaded, isSignedIn, user } = useUser();
 
     return (
         <header className="w-full fixed z-50 bg-(--bg-primary)">
@@ -36,10 +36,9 @@ const Navbar = () => {
                     })}
 
                     <div className="flex gap-7.5 items-center">
-                        <SignedOut>
-                            <SignInButton mode="modal" />
-                        </SignedOut>
-                        <SignedIn>
+                        {!isLoaded ? (
+                            <div className="size-8 rounded-full bg-black/5" aria-hidden />
+                        ) : isSignedIn ? (
                             <div className="nav-user-link">
                                 <UserButton />
                                 {user?.firstName && (
@@ -48,7 +47,12 @@ const Navbar = () => {
                                     </Link>
                                 )}
                             </div>
-                        </SignedIn>
+                        ) : (
+                            <>
+                                <SignInButton mode="modal" />
+                                <SignUpButton mode="modal" />
+                            </>
+                        )}
                     </div>
                 </nav>
             </div>
