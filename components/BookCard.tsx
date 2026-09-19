@@ -8,7 +8,17 @@ const BookCard = ({ title, author, coverURL, slug }: BookCardProps) => {
             <article className="book-card">
                 <figure className="book-card-figure">
                     <div className="book-card-cover-wrapper">
-                        <Image src={coverURL} alt={title} width={133} height={200} className="book-card-cover" />
+                        {/* width/height only declare the nominal 2:3 cover ratio; the rendered
+                            size comes from .book-card-cover (w-auto + fixed height). Keeping
+                            both axes different from the CSS box avoids Next.js' warning about
+                            changing only one side of the aspect ratio. */}
+                        <Image
+                            src={coverURL}
+                            alt={title}
+                            width={400}
+                            height={600}
+                            className="book-card-cover"
+                        />
                     </div>
 
                     <figcaption className="book-card-meta">

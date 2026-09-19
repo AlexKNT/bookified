@@ -20,7 +20,8 @@ const Navbar = () => {
         <header className="w-full fixed z-50 bg-(--bg-primary)">
             <div className="wrapper navbar-height py-4 flex justify-between items-center">
                 <Link href="/" className="flex gap-0.5 items-center">
-                    <Image src="/assets/logo.png" alt="Bookfied" width={42} height={26} />
+                    {/* Intrinsic size in the props keeps the aspect ratio; CSS pins the display width. */}
+                    <Image src="/assets/logo.png" alt="Bookfied" width={86} height={52} className="w-[42px] h-auto" />
                     <span className="logo-text">Bookified</span>
                 </Link>
 

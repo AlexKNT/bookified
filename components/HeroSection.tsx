@@ -25,9 +25,9 @@ const HeroSection = () => {
                         <Image
                             src="/assets/hero-illustration.png"
                             alt="Vintage books and a globe"
-                            width={400}
-                            height={400}
-                            className="object-contain"
+                            width={491}
+                            height={352}
+                            className="object-contain w-[400px] h-auto"
                         />
                     </div>
 
@@ -36,9 +36,9 @@ const HeroSection = () => {
                         <Image
                             src="/assets/hero-illustration.png"
                             alt="Vintage books and a globe"
-                            width={300}
-                            height={300}
-                            className="object-contain"
+                            width={491}
+                            height={352}
+                            className="object-contain w-[300px] h-auto"
                         />
                     </div>
 
