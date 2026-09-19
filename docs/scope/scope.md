@@ -18,7 +18,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | E | Plan limits and billing | Existing | existing |
 | F | Data model | Existing | existing |
 | G | Design system and app shell | Existing | existing |
-| 1 | Test harness | Foundation | planned |
+| 1 | Test harness | Foundation | in-progress |
 | 2 | Grounded answers from the book | Slice 1 | planned |
 | 3 | Edit a book's details | Slice 2 | planned |
 | 4 | Delete and restore a book | Slice 2 | planned |
@@ -54,10 +54,17 @@ The Tailwind v4 theme, the shadcn primitives, the navbar, the hero, and the load
 
 ## Foundations
 
-### 1. Test harness · needs a decision
+### 1. Test harness · in-progress
 The Beta stage closes with `/test`, and no test runner exists in the repo yet, so there is nowhere for the tests of the coming features to live. (basis: foundations before features, and `package.json` has no test script)
 **Done when:** a test command runs in the repo, it covers one existing server action as a first real test, and the framework choice is recorded so later features inherit it.
-- [ ] Design it (spec): `/architect test harness`
+spec [0001](../specs/0001-test-harness/index.md)
+- [x] Design it (spec): `/architect test harness`
+- [ ] Build it: `/develop test harness`
+  - [ ] One command, one real test green (dependencies, config, database helper, Clerk fake, factories, scripts, the first test) · AC-1, AC-2, AC-3, AC-4, AC-5, AC-8, AC-9
+  - [ ] The component half proven (the DOM project and the card test) · AC-6
+  - [ ] Recorded and inherited (preferences file, coverage script, ignored artifacts, flags for `/sync`) · AC-2, AC-7, AC-10
+- [ ] Verify it: `/check verify test harness`
+- [ ] Test it: `/test test harness`
 
 ## Slice 1: Answers from the book
 
@@ -110,6 +117,8 @@ Out of scope for this build pass, kept so the plan stays honest.
 - **Text follow along**: highlight the passage while the voice reads it · needs a decision
 - **Multi user libraries**: book clubs and educators sharing titles · needs a decision
 - **Notifications**: a warning as a reader nears the monthly limit, plus re engagement email · needs a decision
+- **Test pipeline**: run the suite automatically on a branch, so a failing test blocks a merge instead of being remembered · from spec 0001 (basis: the harness is worth more once something runs it without being asked)
+- **End to end browser tests**: real browser flows for the pages, once a page level feature needs them · from spec 0001 (basis: ruled out of the test harness decision, and the `clerk-testing` skill is already installed for when it is not)
 
 ## References
 
