@@ -1,7 +1,7 @@
 # 0001. Adopt Vitest as the test harness
 
 **Date**: 2026-09-19
-**Status**: Proposed
+**Status**: In Progress
 
 ## Summary
 

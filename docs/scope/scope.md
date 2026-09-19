@@ -57,14 +57,14 @@ The Tailwind v4 theme, the shadcn primitives, the navbar, the hero, and the load
 ### 1. Test harness · in-progress
 The Beta stage closes with `/test`, and no test runner exists in the repo yet, so there is nowhere for the tests of the coming features to live. (basis: foundations before features, and `package.json` has no test script)
 **Done when:** a test command runs in the repo, it covers one existing server action as a first real test, and the framework choice is recorded so later features inherit it.
-spec [0001](../specs/0001-test-harness/index.md)
+spec [0001](../specs/0001-test-harness/index.md) · code in `test/`, `vitest.config.mts`
 - [x] Design it (spec): `/architect test harness`
-- [ ] Build it: `/develop test harness`
-  - [ ] One command, one real test green (dependencies, config, database helper, Clerk fake, factories, scripts, the first test) · AC-1, AC-2, AC-3, AC-4, AC-5, AC-8, AC-9
-  - [ ] The component half proven (the DOM project and the card test) · AC-6
-  - [ ] Recorded and inherited (preferences file, coverage script, ignored artifacts, flags for `/sync`) · AC-2, AC-7, AC-10
-- [ ] Verify it: `/check verify test harness`
-- [ ] Test it: `/test test harness`
+- [x] Build it: `/develop test harness`
+  - [x] One command, one real test green (dependencies, config, database helper, Clerk fake, factories, scripts, the first test) · AC-1, AC-2, AC-3, AC-4, AC-5, AC-8, AC-9
+  - [x] The component half proven (the DOM project and the card test) · AC-6
+  - [x] Recorded and inherited (preferences file, coverage script, ignored artifacts, flags for `/sync`) · AC-2, AC-7, AC-10
+- [x] Verify it: `/check verify test harness`
+- [x] Test it: `/test test harness`
 
 ## Slice 1: Answers from the book
 
